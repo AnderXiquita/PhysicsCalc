@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- META GENERAL -->
+    <meta charset="UTF-8">
+    <title>PhysicsCalc | MRU</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description"
+        content="Calculadora de MRU (movimiento rectilíneo uniforme), herramienta para solución de problemas de MRU - Accede a la calculadora" />
+    <meta name="keywords"
+        content="movimiento uniforme, movimiento rectilíneo uniforme, movimiento rectilíneo uniformemente, formulas de movimiento rectilíneo uniforme, calculadora de movimiento rectilíneo uniforme, formulas de movimiento rectilíneo uniforme, calculadora de mru" />
+
+
+    <!-- META ADICIONAL -->
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:type" content="website" />
+    <meta name="category" content="Education" />
+    <meta property="og:title" content="Calculadora de MRU | Cinemática" />
+    <meta property="og:description"
+        content="Calculadora de MRU (movimiento rectilíneo uniforme), herramienta para solución de problemas de MRU" />
+    <meta property="og:url" content="https://calculadoradefisica.online/es/mru.html" />
+    <meta property="og:site_name" content="calculadoradefisica.online" />
+
+
+    <!-- LINK IMPORT -->
+
+    <link rel="canonical" href="https://calculadoradefisica.online/es/mru.html" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../assets/images/icon-navbar/logo.svg" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/calculadoras/style.css">
+    <link rel="stylesheet" href="../../css/nav-bar.css">
+
+    <!-- ADS -->
+    <script data-ad-client="ca-pub-2104042618438631" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- icon -->
+    <script src="https://kit.fontawesome.com/db0df6ecbc.js" crossorigin="anonymous"></script>
+
+
+
+
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "69x1cbufhg");
+    </script>
+
+
+</head>
+
+
+<body>
+
+    <nav>
+        <button class="menu1">
+            <div class="up"></div>
+            <div class="mid"></div>
+            <div class="down"></div>
+        </button>
+    
+        <a href="../../index.html"><span class="home"></span></a>
+    
+        <div class="mobile-menu inactive">
+            <ul>
+              <li class="titulo">
+                CINEMATICA
+              </li>
+              <li>
+                <a href="../../mru/es/mru.html">MRU</a>
+              </li>
+              <li>
+                <a href="../../mruv/es/mrua.html">MRUV</a>
+              </li>
+              <li>
+                <a href="../../caida libre/es/caida-libre.html">Caida Libre</a>
+              </li>
+              <li>
+                <a href="../../tiroParabolico/es/movimiento-parabolico.html">Tiro Parabolico</a>
+              </li>
+              <li>
+                <a href="../../html/enConstruccion.html">Tiro Vertical</a>
+              </li>
+              <li>
+                <a href="../../html/enConstruccion.html">MCU</a>
+              </li>
+              <li>
+                <a href="../../html/enConstruccion.html">MCUV</a>
+              </li>
+            </ul>
+        
+            <ul>
+              <li>
+                <a href="../../html/formularios.html">Formularios</a>
+              </li>
+              <li>
+                <a href="../../html/informacion.html">Informacion</a>
+              </li>
+            </ul>
+        
+            <ul>
+              <li>
+                <a href="../../html/enConstruccion.html" class="email">Lopezander210@gmail.com</a>
+              </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Menu superior -->
+
+    <div class="container">
+
+        <div class="contents">
+            <div class="title">
+                <h3 class="title__h3">Calculadora de MRU</h3>
+                <h1 class="title__h1">Movimiento Rectilíneo Uniforme</h1>
+            </div>
+
+            <div class=contenedorcalculadora>
+
+                <div class=contenidoformulario class="form" id="contenedor">
+                    <p style="font-size: 20pt"><b>Ingresa los datos</b></p>
+                    <br>
+                    <div class="contenedorformularioparadatos">
+
+
+
+                        <form class="form">
+
+                            <!-- Input Distancia -->
+                            <label class="dist">Distancia<span class="conversion" id="conversiond"></span></label>
+                            <input type="number" id="distancia" step="any" placeholder="" onkeyup="captura()"
+                                onchange="captura()">
+                            <select id="unidadx" class="menu" onchange="captura()">
+                                <option value="cm">cm</option>
+                                <option value="m" selected>m</option>
+                                <option value="km">km</option>
+                            </select>
+
+                            <!-- Input Velocidad -->
+                            <label>Velocidad <span class="conversion" id="conversionv"></span></label>
+                            <input type="number" id="velocidad" step="any" placeholder="" onkeyup="captura()"
+                                onchange="captura()">
+                            <select id=unidadv class="menu" onchange="captura()">
+                                <option value="m/s">m/s</option>
+                                <option value="km/h">km/h</option>
+                            </select>
+
+
+
+
+                            <!-- Input Tiempo -->
+                            <label>Tiempo <span class="conversion" id="conversiont"></span></label>
+                            <input type="number" id="tiempo" step="any" placeholder="" onkeyup="captura()"
+                                onchange="captura()">
+                            <select id="unidadt" class="menu" onchange="captura()">
+                                <option value="seg">seg</option>
+                                <option value="min">min</option>
+                                <option value="hora">hora</option>
+                            </select>
+
+
+                            <!-- Boton para reestablecer -->
+                            <input type="button" id="calcular" value="LIMPIAR" onclick="limpiar(); captura()">
+                        </form>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Resultado -->
+                <div class=contenedorresultado>
+
+                    <div class=contenedoresultado>
+                        <h3 class="textoresultado">Resultado</h3><br>
+                        <p class="textoresultado" id="resultado"></p>
+                    </div>
+
+                    <!-- Estilo para la tabla -->
+                    <style type="text/css">
+
+                    </style>
+
+
+
+
+
+                    <div id="fotoresultado" class="fotoresultado">
+                        <p class="tituloprocedimientos" style="display: none;" id="titulotabla"> </p>
+
+                        <div class="tabla" id="tabla" style="display: none;">
+
+                            <div class="tabla-formula">
+
+                                <!-- conversiones -->
+                                <div id="divtiempo" style="display:none ;">
+                                    <p class="titulo2" id="conversiont1"> </p>
+                                    <p class="p-formulas" id="conversiont2"></p>
+                                </div>
+
+                                <div id="divvelocidad" style="display: none;">
+                                    <p class="titulo2" id="conversionv1"> </p>
+                                    <p class="p-formulas" id="conversionv2"></p>
+                                </div>
+
+                                <div id="divdistancia" style="display: none;">
+                                    <p class="titulo2" id="conversionx1"></p>
+                                    <p class="p-formulas" id="conversionx2"></p>
+                                </div>
+
+
+
+                                <p class="titulo2" id="titulooperacion1"> </p>
+                                <p class="p-formulas" id="frml1"></p>
+
+
+                                <!-- conversiones al resultado -->
+                                <div id="divconversionres1" style="display: none;">
+                                    <p class="titulo3" id="conversionres1"> </p>
+                                    <p class="p-formulas" id="conversionres11"></p>
+                                </div>
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- new section theory -->
+            <section class="theory">
+                <p class="theory__p">
+
+                    <br>- El <b>M</b>ovimiento <b>R</b>ectilíneo <b>U</b>niforme <b>(MRU)</b> se encarga
+                    de estudiar el movimiento que efectua un cuerpo cuyo desplazamiento es en linea recta y su
+                    velocidad es
+                    constante,
+                    es decir, su velocidad no cambia en el transcurso del tiempo.
+
+
+
+                    <br><br>- Generalmente, el acrónimo del movimiento rectilíneo uniforme es el MRU pero en
+                    algunos
+                    países
+                    también se le llama <b>MRC (movimiento rectilíneo constante)</b>
+                    <br><br>- Así como las matemáticas, <b>la cinemática también puede ser calculada a través de
+                        una
+                        calculadora de física</b>. Por tanto, puedes calcular la velocidad, distancia o el
+                    tiempo
+                    sin ningún
+                    problema.
+                    <br><br>- El MRU puede desplazarse hacia adelante o hacia atrás y por tanto la velocidad de
+                    un
+                    objeto
+                    puede ser negativa cuando se dirige en su dirección contraria.
+                    <br><br>- Un ejemplo claro del movimiento rectilíneo puede ser la trayectoria de una bala
+                    que se
+                    dispara. Toda trayectoria que sea recta, es MRU.
+
+
+                    <br><br>
+
+                    - En el MRU existen tres variables (distancia, tiempo, velocidad) y se emplean formulas para
+                    poder
+                    calcularlas, las cuales, son las siguientes:
+
+
+
+                    <b><br><br>Fórmula para hallar la distancia en MRU:<br></b>
+
+                    <b>D</b>istancia = <b>T</b>iempo * <b>V</b>elocidad
+
+
+
+                    <b><br><br>Fórmula para hallar la velocidad en MRU:<br></b>
+
+                    <b>V</b>elocidad = <b>D</b>istancia / <b>T</b>iempo
+
+                    <b><br><br>Fórmula para hallar el tiempo en MRU:<br></b>
+
+                    <b>T</b>iempo = <b>D</b>istancia / <b>V</b>elocidad<br><br>
+                </p>
+        </div>
+
+
+
+        <div class="button-up" id="button-up">
+            <i class="button-up__i  fas fa-chevron-up"></i>
+        </div>
+
+        <footer class="footer">
+            <a class="footer__a" href="">
+                @andER</a>
+        </footer>
+
+
+
+    </div>
+
+    <div id="modal_container" class="modal-container">
+
+        <div class="modal modal-close">
+            <a class="close">X</a>
+
+            <div class="modal-textos">
+                <h3>Reporte de fallos y sugerencias</h3>
+                <p>
+                    ¿Encontró un fallo o alguna sugerencia? pídelo y nosotros lo ajustamos, además ayudaras a
+                    mejorar este sitio web reportando lo que veas. (por ejemplo, errores de funcionamiento,
+                    errores de diseño, añadir aquello, etc.)
+
+                </p>
+
+                <form id="formEmail" action="https://formsubmit.co/Calculadoradefisica@pm.me" method="POST">
+                    <label for="Nombre">Nombre (opcional) </label>
+                    <input type="text" name="name" placeholder="">
+                    <label for="email">Email (opcional)</label>
+                    <input type="email" name="email" placeholder="">
+                    <label for="subject" style="display: none;">Asunto</label>
+                    <input type="text" style="display: none;" name="subject"
+                        value="Calculadora de movimiento rectilíneo uniforme">
+                    <label for="comments">Reporte (Menciona cualquier sugerencia o falla presentada)</label>
+                    <textarea type="text" id="comments" name="comments" cols="15" rows="5"></textarea>
+                    <button id="enviar" type="button" onclick="enviarFormulario()">Enviar</button>
+                    <input type="hidden" name="_next" value="https://calculadoradefisica.online/es/caidalibre.html">
+                    <input type="hidden" name="_captcha" value="false">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="../assets/js/validateEmails.js"></script>
+    <script src="../assets/js/modal.js"></script>
+    <script src="../assets/js/ejemplos/ejemplos_mru.js"></script>
+    <script src="../assets/js/mru.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../../main2.js"></script>
+
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- META GENERAL -->
+    <meta charset="UTF-8">
+    <title>PhysicsCalc | MRUV</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="Calculadora de mrua, Solución de problemas y formulas despejadas de mrua" />
+    <meta name="keywords"
+        content="movimiento uniforme acelerado, movimiento rectilíneo uniformemente acelerado, movimiento rectilíneo uniformemente, movimiento uniformemente acelerado, formulas de movimiento rectilíneo uniforme, calculadora de movimiento rectilíneo uniforme, formulas de movimiento rectilíneo uniforme acelerado" />
+
+    <!-- META ADICIONAL -->
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:type" content="website" />
+    <meta name="category" content="Education" />
+    <meta property="og:title" content="Calculadora de MRUA | Cinemática" />
+    <meta property="og:description"
+        content="Calculadora de MRUA, Solución de problemas y formulas despejadas de MRUA" />
+    <meta property="og:url" content="https://calculadoradefisica.online/es/mrua.html" />
+    <meta property="og:site_name" content="calculadoradefisica.online" />
+    <meta property="article:modified_time" content="2022-07-25T11:25:43+00:00" />
+
+
+
+    <!-- LINK IMPORT -->
+
+    <link rel="canonical" href="https://calculadoradefisica.online/es/mru.html" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../assets/images/icon-navbar/logo.svg" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/calculadoras/style.css">
+    <link rel="stylesheet" href="../../css/nav-bar.css">
+
+    <!-- ADS -->
+    <script data-ad-client="ca-pub-2104042618438631" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- icon -->
+    <script src="https://kit.fontawesome.com/db0df6ecbc.js" crossorigin="anonymous"></script>
+
+
+
+
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "69x1cbufhg");
+    </script>
+
+
+</head>
+
+
+<body>
+
+    <nav>
+        <button class="menu1">
+            <div class="up"></div>
+            <div class="mid"></div>
+            <div class="down"></div>
+        </button>
+    
+        <a href="../../index.html"><span class="home"></span></a>
+    
+        <div class="mobile-menu inactive">
+            <ul>
+              <li class="titulo">
+                CINEMATICA
+              </li>
+              <li>
+                <a href="../../mru/es/mru.html">MRU</a>
+              </li>
+              <li>
+                <a href="../../mruv/es/mrua.html">MRUV</a>
+              </li>
+              <li>
+                <a href="../../caida libre/es/caida-libre.html">Caida Libre</a>
+              </li>
+              <li>
+                <a href="../../tiroParabolico/es/movimiento-parabolico.html">Tiro Parabolico</a>
+              </li>
+              <li>
+                <a href="../../html/enConstruccion.html">Tiro Vertical</a>
+              </li>
+              <li>
+                <a href="../../html/enConstruccion.html">MCU</a>
+              </li>
+              <li>
+                <a href="../../html/enConstruccion.html">MCUV</a>
+              </li>
+            </ul>
+        
+            <ul>
+              <li>
+                <a href="../../html/formularios.html">Formularios</a>
+              </li>
+              <li>
+                <a href="../../html/informacion.html">Informacion</a>
+              </li>
+            </ul>
+        
+            <ul>
+              <li>
+                <a href="../../html/enConstruccion.html" class="email">Lopezander210@gmail.com</a>
+              </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Menu superior -->
+
+    <div class="container">
+        <div class="contents">
+            <div class="title">
+                <h3 class="title__h3">Calculadora de MRUA</h3>
+                <h1 class="title__h1">Movimiento Rectilíneo Uniforme Acelerado</h1>
+            </div>
+
+            <div class=contenedorcalculadora>
+
+                <div class=contenidoformulario class="form" id="contenedor">
+                    <p style="font-size: 20pt"><b>Ingresa los datos</b></p>
+                    <br>
+                    <div class="contenedorformularioparadatos">
+
+
+                        <form id="form" class="form">
+
+                            <!-- Input distancia -->
+                            <label>Distancia<span class="conversion" id="conversiond"></span></label>
+                            <input type="number" id="distancia" step="any" placeholder="" onkeyup="captura()"
+                                onchange="captura()">
+                            <select id=unidadx class="menu" onchange="captura()">
+                                <option value="cm">cm</option>
+                                <option value="m" selected>m</option>
+                                <option value="km">km</option>
+                            </select>
+
+                            <!-- Velocidad Inicial -->
+                            <label>Velocidad Inicial<span class="conversion" id="conversionvi"></span></label>
+                            <input type="number" id="vi" step="any" placeholder="" value="0" onkeyup="captura()"
+                                onchange="captura()">
+                            <select id="unidadvi" class="menu" onchange="captura()">
+                                <option value="m/s" selected>m/s</option>
+                                <option value="km/h">km/h</option>
+                            </select>
+
+                            <!-- Velocidad Final -->
+                            <label>Velocidad Final<span class="conversion" id="conversionvf"></span></label>
+                            <input type="number" id="vf" step="any" placeholder="" onkeyup="captura()"
+                                onchange="captura()">
+                            <select id="unidadvf" class="menu" onchange="captura()">
+                                <option value="m/s" selected>m/s</option>
+                                <option value="km/h">km/h</option>
+                            </select>
+
+
+                            <!-- Input tiempo -->
+                            <label>Tiempo <span class="conversion" id="conversiont"></span></label>
+                            <input type="number" id="tiempo" step="any" placeholder="" onkeyup="captura()"
+                                onchange="captura()">
+                            <select id="unidadt" class="menu" onchange="captura()">
+                                <option value="seg" selected>segundos</option>
+                                <option value="min">minutos</option>
+                                <option value="hora">horas</option>
+                            </select>
+
+                            <!-- Input Aceleracion -->
+                            <label>Aceleración</label>
+                            <input type="number" id="aceleracion" step="any" placeholder="" onkeyup="captura()"
+                                onchange="captura()">
+                            <select id="unidada" class="menu" onchange="captura()">
+                                <option value="m/s2">m/s²</option>
+
+                            </select>
+
+
+                            <!-- Boton para calcular -->
+                            <input type="button" id="calcular" value="LIMPIAR" onclick="limpiar(); captura()">
+
+                        </form>
+
+                    </div>
+                </div>
+
+                <!-- Resultado -->
+                <div class=contenedorresultado>
+
+                    
+
+                    <div class=contenedoresultado>
+                        <h3 class="textoresultado">Resultado</h3><br>
+                        <p class="textoresultado" id="resultado"></p>
+                        <p class="textoresultado" id="resultado2"></p>
+
+                    </div>
+
+                    <div id="fotoresultado" class="fotoresultado">
+
+
+                        <div class="contendor-procedimientos" id="contendor-procedimientos" style="display: none;">
+
+                            <p class="tituloprocedimientos" style="display: none;" id="titulotabla"> </p>
+
+                            <div class="tabla" id="tabla" style="display: none;">
+
+                                <div class="tabla-formula">
+
+                                    <!-- conversiones -->
+
+                                    <div id="divdistancia" style="display: none;">
+                                        <p class="titulo2" id="conversionx1"></p>
+                                        <p class="p-formulas" id="conversionx2"></p>
+                                    </div>
+
+                                    <div id="divvi" style="display: none;">
+                                        <p class="titulo2" id="conversionvi1"></p>
+                                        <p class="p-formulas" id="conversionvi2"></p>
+                                    </div>
+
+                                    <div id="divvf" style="display:none;">
+                                        <p class="titulo2" id="conversionvf1"></p>
+                                        <p class="p-formulas" id="conversionvf2"></p>
+                                    </div>
+
+
+
+                                    <div id="divtiempo" style="display:none ;">
+                                        <p class="titulo2" id="conversiont1"> </p>
+                                        <p class="p-formulas" id="conversiont2"></p>
+                                    </div>
+
+
+
+
+
+                                    <p class="titulo2" id="titulooperacion1"> </p>
+                                    <p class="p-formulas" id="frml1"></p>
+
+
+                                    <!-- conversiones al resultado -->
+                                    <div id="divconversionres1" style="display: none;">
+                                        <p class="titulo3" id="conversionres1"> </p>
+                                        <p class="p-formulas" id="conversionres11"></p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="contendor-procedimientos" id="contendor-procedimientos2" style="display: none;">
+
+                            <p class="tituloprocedimientos" style="display: none;" id="titulotabla2"></p>
+                            <div class="tabla" id="tabla2" style="display: none;">
+
+
+                                <div id="tabla-formula2" class="tabla-formula">
+
+                                    <p class="titulo2" id="titulooperacion2"> </p>
+
+                                    <p class="p-formulas" id="frml2"></p>
+
+
+                                    <!-- conversiones al resultado -->
+                                    <div id="divconversionres2" style="display: none;">
+                                        <p class="titulo3" id="conversionres2"></p>
+                                        <p class="p-formulas" id="conversionres22"></p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- new section theory -->
+            <section class="theory">
+
+                <p class="theory__p">
+
+
+                    El <b>M</b>ovimiento <b>R</b>ectilíneo <b>U</b>niformemente <b>A</b>celerado <b>(MRUA)</b> o
+                    tambien conocido como <b>M</b>ovimiento <b>R</b>ectilíneo <b>U</b>niforme <b>V</b>ariado
+                    <b>(MRUV)</b>, se encarga
+                    de estudiar el movimiento que efectua un cuerpo cuyo desplazamiento es en linea recta y que
+                    además, dispone de una
+                    aceleración contante y distinta de cero. Por otra parte, la velocidad de un movimiento
+                    rectilineo uniforme acelerado
+                    cambia a traves del tiempo, es decir, que su velocidad no es contante y esto se debe a la
+                    aceleración.
+
+                </p>
+
+                <p class="theory__p">
+
+                    <b><br><br>Fórmula para hallar la distancia:<br><br></b>
+
+                    <b>D</b>istancia = <b>V</b>elocidad inicial * <b>T</b>iempo + 1/2 * <b>A</b>celeracion *
+                    <b>T</b>iempo<sup>2</sup>
+                    <br>
+                    <b>D</b>istancia = <b>V</b>elocidad final * <b>T</b>iempo - 1/2 * <b>A</b>celeracion *
+                    <b>T</b>iempo<sup>2</sup>
+                    <br>
+                    <b>D</b>istancia = (<b>V</b>elocidad inicial + <b>V</b>elocidad final) / 2 * <b>T</b>iempo
+
+
+                    <b><br><br><br>Fórmulas para hallar la velocidad inicial:<br><br></b>
+
+                    <b>V</b>elocidad inicial = <b>V</b>elocidad final - <b>A</b>celeración * <b>T</b>iempo
+                    <br>
+                    <b>V</b>elocidad inicial = (<b>V</b>elocidad final - 2 * <b>A</b>celeración *
+                    <b>D</b>istancia)<sup>1/2</sup>
+                    <br>
+
+
+                    <b><br><br>Fórmulas para hallar la velocidad final: <br><br></b>
+
+                    <b>V</b>elocidad final = <b>V</b>elocidad inicial + <b>A</b>celeración * <b>T</b>iempo
+                    <br>
+                    <b>V</b>elocidad final = (<b>V</b>elocidad inicial + 2 * <b>A</b>celeración *
+                    <b>D</b>istancia)<sup>1/2</sup>
+                    <br>
+
+                    <b><br><br>Fórmula para hallar el tiempo:<br><br></b>
+
+                    <b>T</b>iempo = (<b>V</b>elocidad final - <b>V</b>elocidad inicial) / <b>A</b>celeración
+                    <br>
+
+
+
+
+                    <b><br><br>Fórmulas para hallar la aceleración:<br><br></b>
+
+                    <b>A</b>celeración = (<b>V</b>elocidad final - <b>V</b>elocidad inicial) / <b>T</b>iempo
+                    <br>
+                    <b>A</b>celeración = (<b>D</b>istancia - (<b>V</b>elocidad inicial * <b>T</b>iempo) ) / (0,5
+                    *
+                    <b>T</b>iempo)<sup>2</sup>
+                    <br>
+                    <b>A</b>celeración = (<b>D</b>istancia + (<b>V</b>elocidad final * <b>T</b>iempo) ) / (0,5 *
+                    <b>T</b>iempo)<sup>2</sup>
+                    <br>
+                    <b>A</b>celeración = (<b>V</b>elocidad final<sup>2</sup> - <b>V</b>elocidad
+                    inicial<sup>2</sup>)
+                    / 2 * <b>D</b>istancia
+                    <br>
+                </p>
+
+            </section>
+        </div>
+
+
+
+        <div class="button-up" id="button-up">
+            <i class="button-up__i  fas fa-chevron-up"></i>
+        </div>
+
+        <footer class="footer">
+            <a class="footer__a" href="">
+                @andER
+            </a>
+        </footer>
+
+
+
+    </div>
+
+    <div id="modal_container" class="modal-container">
+
+        <div class="modal modal-close">
+            <a class="close">X</a>
+
+            <div class="modal-textos">
+                <h3>Reporte de fallos y sugerencias</h3>
+                <p>
+                    ¿Encontró un fallo o alguna sugerencia? pídelo y nosotros lo ajustamos, además ayudaras a
+                    mejorar este sitio web reportando lo que veas. (por ejemplo, errores de funcionamiento,
+                    errores de diseño, añadir aquello, etc.)
+                </p>
+
+                <form id="formEmail" action="https://formsubmit.co/Calculadoradefisica@pm.me" method="POST">
+                    <label for="Nombre">Nombre (opcional) </label>
+                    <input type="text" name="name" placeholder="">
+                    <label for="email">Email (opcional)</label>
+                    <input type="email" name="email" placeholder="">
+                    <label for="subject" style="display: none;">Asunto</label>
+                    <input type="text" style="display: none;" name="subject"
+                        value="Calculadora de movimiento circular uniforme acelerado">
+                    <label for="comments">Reporte (Menciona cualquier sugerencia o falla presentada)</label>
+                    <textarea type="text" id="comments" name="comments" cols="15" rows="5"></textarea>
+                    <button id="enviar" type="button" onclick="enviarFormulario()">Enviar</button>
+                    <input type="hidden" name="_next" value="https://calculadoradefisica.online/es/caidalibre.html">
+                    <input type="hidden" name="_captcha" value="false">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="../assets/js/validateEmails.js"></script>
+    <script src="../assets/js/modal.js"></script>
+    <script src="../assets/js/ejemplos/ejemplo_mrua.js"></script>
+    <script src="../assets/js/mrua.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../../main2.js"></script>
+
+</body>
+
+
+
+</html>

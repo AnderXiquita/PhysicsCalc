@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- META GENERAL -->
+    <meta charset="UTF-8">
+    <title>PhysicsCalc | Tiro Parabolico</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description"
+        content="Calculadora de movimiento parabolico ,solución de problemas y formulas despejadas de tiro parabólico..." />
+    <meta name="keywords"
+        content="movimiento parabolico,movimiento parabólico ejemplos,tiro horizontal,tiro parabólico,tiro parabólico horizontal,tiro parabólico fórmulas, formulas tiro parabolico" />
+
+
+    <!-- META ADICIONAL -->
+
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:type" content="website" />
+    <meta name="category" content="Education" />
+    <meta property="og:title"
+        content="Calculadora de movimiento parabolico de caida libre - tiro parabólico fórmulas" />
+    <meta property="og:description"
+        content="Calculadora de movimiento parabolico ,solución de problemas y formulas despejadas de tiro parabólico..." />
+    <meta property="og:url"
+        content="https://calculadoradefisica.online/calculadora-movimiento-parabolico/movimientoparabolico.html" />
+    <meta property="og:site_name" content="calculadoradefisica.online" />
+    <meta property="article:modified_time" content="2022-07-25T11:25:43+00:00" />
+
+    <!-- LINK IMPORT -->
+
+    <link rel="canonical" href="https://calculadoradefisica.online/es/mru.html" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../assets/images/icon-navbar/logo.svg" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/calculadoras/style.css">
+    <link rel="stylesheet" href="../../css/nav-bar.css">
+
+    <!-- ADS -->
+    <script data-ad-client="ca-pub-2104042618438631" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- icon -->
+    <script src="https://kit.fontawesome.com/db0df6ecbc.js" crossorigin="anonymous"></script>
+
+
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "69x1cbufhg");
+    </script>
+
+
+</head>
+
+
+<body>
+
+    <nav>
+        <button class="menu1">
+            <div class="up"></div>
+            <div class="mid"></div>
+            <div class="down"></div>
+        </button>
+    
+        <a href="../../index.html"><span class="home"></span></a>
+    
+        <div class="mobile-menu inactive">
+            <ul>
+              <li class="titulo">
+                CINEMATICA
+              </li>
+              <li>
+                <a href="../../mru/es/mru.html">MRU</a>
+              </li>
+              <li>
+                <a href="../../mruv/es/mrua.html">MRUV</a>
+              </li>
+              <li>
+                <a href="../../caida libre/es/caida-libre.html">Caida Libre</a>
+              </li>
+              <li>
+                <a href="../../tiroParabolico/es/movimiento-parabolico.html">Tiro Parabolico</a>
+              </li>
+              <li>
+                <a href="../../html/enConstruccion.html">Tiro Vertical</a>
+              </li>
+              <li>
+                <a href="../../html/enConstruccion.html">MCU</a>
+              </li>
+              <li>
+                <a href="../../html/enConstruccion.html">MCUV</a>
+              </li>
+            </ul>
+        
+            <ul>
+              <li>
+                <a href="../../html/formularios.html">Formularios</a>
+              </li>
+              <li>
+                <a href="../../html/informacion.html">Informacion</a>
+              </li>
+            </ul>
+        
+            <ul>
+              <li>
+                <a href="../../html/enConstruccion.html" class="email">Lopezander210@gmail.com</a>
+              </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Menu superior -->
+
+    <div class="container">
+        <div class="contents">
+            <div class="title">
+                <h3 class="title__h3">Calculadora de MPCL</h3>
+                <h1 class="title__h1">Tiro Parabólico</h1>
+            </div>
+
+            <div class=contenedorcalculadora>
+
+                <div class=contenidoformulario class="form" id="contenedor">
+                    <p style="font-size: 20pt"><b>Ingresa los datos</b></p>
+                    <br>
+                    <div class="contenedorformularioparadatos">
+
+
+                        <form id="form" class="form">
+
+
+                            <!-- Input gravedad -->
+                            <label>Gravedad</label>
+                            <input type="number" id="gravedad" step="any" placeholder="" value="9.8" onkeyup="captura()"
+                                onchange="captura()">
+                            <select id="g" class="menu">
+                                <option value="m/s2">m/s2</option>
+                            </select>
+
+                            <!-- Input Angulo -->
+                            <label>Ángulo <span class="conversion" id="conversion1"></span></label>
+                            <input type="number" id="angulo" step="any" placeholder="" value="" onkeyup="captura()"
+                                onchange="captura()">
+                            <select id="unidad1" class="menu" onchange="captura()">
+                                <option value="rad">rad</option>
+                                <option value="grados" selected>grados</option>
+                            </select>
+
+
+                            <!-- Input velocidad inicial  -->
+                            <label>Velocidad inicial <span class="conversion" id="conversion2"></span></label>
+                            <input type="number" id="velocidad_inicial" step="any" placeholder="" onkeyup="captura()"
+                                onchange="captura()">
+                            <select id="unidad2" class="menu" onchange="captura()">
+                                <option value="m/s" selected>m/s</option>
+                                <option value="km/h">km/h</option>
+                            </select>
+
+
+                            <!-- Input velocidad inicial  X -->
+                            <label>Velocidad inicial en x <span class="conversion" id="conversion3"></span></label>
+                            <input type="number" id="velocidad_inicial_x" step="any" placeholder="" onkeyup="captura()"
+                                onchange="captura()">
+                            <select id="unidad3" class="menu" onchange="captura()">
+                                <option value="m/s" selected>m/s</option>
+                                <option value="km/h">km/h</option>
+                            </select>
+
+
+                            <!-- Input velocidad inicial  y -->
+                            <label>Velocidad inicial en y <span class="conversion" id="conversion4"></span></label>
+                            <input type="number" id="velocidad_inicial_y" step="any" placeholder="" onkeyup="captura()"
+                                onchange="captura()">
+                            <select id="unidad4" class="menu" onchange="captura()">
+                                <option value="m/s" selected>m/s</option>
+                                <option value="km/h">km/h</option>
+                            </select>
+
+                            <!-- Input Tiempo -->
+                            <label>Tiempo de subida <span class="conversion" id="conversion5"></span></label>
+                            <input type="number" id="tiempo" step="any" placeholder="" onkeyup="captura()"
+                                onchange="captura()">
+                            <select id="unidad5" class="menu" onchange="captura()">
+                                <option value="seg" selected>segundos</option>
+                                <option value="min">minutos</option>
+                                <option value="hora">horas</option>
+                            </select>
+
+
+                            <!-- Input Tiempo de vuelo -->
+                            <label>Tiempo de vuelo <span class="conversion" id="conversion6"></span></label>
+                            <input type="number" id="tiempo_vuelo" step="any" placeholder="" onkeyup="captura()"
+                                onchange="captura()">
+                            <select id="unidad6" class="menu" onchange="captura()">
+                                <option value="seg" selected>segundos</option>
+                                <option value="min">minutos</option>
+                                <option value="hora">horas</option>
+                            </select>
+
+
+                            <!-- Input altura inicial -->
+                            <label>Altura inicial <span class="conversion" id="conversion7"></span></label>
+                            <input type="number" id="altura" step="any" value="0" placeholder="" onkeyup="captura()"
+                                onchange="captura()">
+                            <select id="unidad7" class="menu" onchange="captura()">
+                                <option value="cm">centimetros</option>
+                                <option value="m" selected>metros</option>
+                                <option value="km">Kilometros</option>
+                            </select>
+
+                            <!-- Input altura maxima -->
+                            <label>Altura maxima <span class="conversion" id="conversion8"></span></label>
+                            <input type="number" id="altura_maxima" step="any" value="" placeholder=""
+                                onkeyup="captura()" onchange="captura()">
+                            <select id="unidad8" class="menu" onchange="captura()">
+                                <option value="cm">centimetros</option>
+                                <option value="m" selected>metros</option>
+                                <option value="km">Kilometros</option>
+                            </select>
+
+                            <!-- Input dezplazamiento horizontal -->
+                            <label>Desplazamiento horizontal <span class="conversion" id="conversion9"></span></label>
+                            <input type="number" id="desplazamiento_horizontal" step="any" placeholder=""
+                                onkeyup="captura()" onchange="captura()">
+                            <select id="unidad9" class="menu" onchange="captura()">
+                                <option value="cm">centimetros</option>
+                                <option value="m" selected>metros</option>
+                                <option value="km">Kilometros</option>
+                            </select>
+
+
+                            <!-- Input alcance horizontal -->
+                            <label>Alcance horizontal <span class="conversion" id="conversion10"></span></label>
+                            <input type="number" id="alcance_horizontal" step="any" placeholder="" onkeyup="captura()"
+                                onchange="captura()">
+                            <select id="unidad10" class="menu" onchange="captura()">
+                                <option value="cm">centimetros</option>
+                                <option value="m" selected>metros</option>
+                                <option value="km">Kilometros</option>
+                            </select>
+
+
+
+
+
+                            <br><br><br>
+                            <!-- Boton para calcular -->
+                            <input type="button" id="calcular" value="LIMPIAR" onclick="limpiar(); captura()">
+
+                        </form>
+
+                    </div>
+                </div>
+
+                <!-- Resultado -->
+                <div class=contenedorresultado>
+
+                    <div class=contenedoresultado>
+                        <h3 class="textoresultado">Resultado</h3>
+                        <p class="textoresultado" id="resultado0"></p>
+                        <p class="textoresultado" id="resultado1"></p>
+                        <p class="textoresultado" id="resultado2"></p>
+                        <p class="textoresultado" id="resultado3"></p>
+                        <p class="textoresultado" id="resultado4"></p>
+                        <p class="textoresultado" id="resultado5"></p>
+                        <p class="textoresultado" id="resultado6"></p>
+                        <p class="textoresultado" id="resultado7"></p>
+                        <p class="textoresultado" id="resultado8"></p>
+                        <p class="textoresultado" id="resultado9"></p>
+                        <p class="textoresultado" id="resultado10"></p>
+                        <p class="textoresultado" id="resultado11"></p>
+
+
+                    </div>
+
+
+                    <div id="fotoresultado" class="fotoresultado">
+
+
+                        <div class="contendor-procedimientos" id="contendor-conversiones" style="display:none;">
+
+                            <p class="tituloprocedimientos" id="titulotabla">Conversiones</p>
+
+
+                            <div class="tabla" id="tabla">
+
+                                <div class="tabla-formula">
+
+                                    <!-- conversiones  pre-resultado -->
+                                    <!-- angulo -->
+                                    <p class="titulo2" id="conversion_1"></p>
+                                    <div id="div_1" style="display: none;">
+                                        <p class="p-formulas" id="procedimiento_1"></p>
+                                    </div>
+
+                                    <!-- velocidad  inicial -->
+                                    <p class="titulo2" id="conversion_2"></p>
+                                    <div id="div_2" style="display: none;">
+                                        <p class="p-formulas" id="procedimiento_2"></p>
+                                    </div>
+
+                                    <!-- velolcidad inicial en x-->
+                                    <p class="titulo2" id="conversion_3"></p>
+                                    <div id="div_3" style="display: none;">
+                                        <p class="p-formulas" id="procedimiento_3"></p>
+                                    </div>
+
+                                    <!-- velocidad inicial en y -->
+                                    <p class="titulo2" id="conversion_4"></p>
+                                    <div id="div_4" style="display: none;">
+                                        <p class="p-formulas" id="procedimiento_4"></p>
+                                    </div>
+
+                                    <!-- tiempo -->
+                                    <p class="titulo2" id="conversion_5"></p>
+                                    <div id="div_5" style="display: none;">
+                                        <p class="p-formulas" id="procedimiento_5"></p>
+                                    </div>
+
+                                    <!-- tiempo de vuelo -->
+                                    <p class="titulo2" id="conversion_6"></p>
+                                    <div id="div_6" style="display: none;">
+                                        <p class="p-formulas" id="procedimiento_6"></p>
+                                    </div>
+
+
+                                    <!-- altura -->
+                                    <p class="titulo2" id="conversion_7"></p>
+                                    <div id="div_7" style="display: none;">
+                                        <p class="p-formulas" id="procedimiento_7"></p>
+                                    </div>
+
+                                    <!-- altura maxima -->
+                                    <p class="titulo2" id="conversion_8"></p>
+                                    <div id="div_8" style="display: none;">
+                                        <p class="p-formulas" id="procedimiento_8"></p>
+                                    </div>
+
+                                    <!-- desplazamieto horizontal  -->
+                                    <p class="titulo2" id="conversion_9"></p>
+                                    <div id="div_9" style="display: none;">
+                                        <p class="p-formulas" id="procedimiento_9"></p>
+                                    </div>
+
+                                    <!-- alcance horizontal  -->
+                                    <p class="titulo2" id="conversion_10"></p>
+                                    <div id="div_10" style="display: none;">
+                                        <p class="p-formulas" id="procedimiento_10"></p>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                        <div class="contendor-procedimientos" id="contendor-procedimientos1" style="display: none;">
+                            <!-- gravedad -->
+                            <p class="tituloprocedimientos" id="titulo1" style="display: none;"></p>
+                            <div class="tabla" id="procedimientos1" style="display: none;">
+                                <div class="tabla-formula">
+                                    <p class="titulo2" id="titulooperacion1"> </p>
+                                    <p class="p-formulas" id="procedimiento11"></p>
+
+                                    <!-- conversiones al resultado -->
+
+                                    <div id="divconversionres1">
+                                        <p class="titulo3" id="conversionres1"></p>
+                                        <p class="p-formulas" id="conversionres11"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="contendor-procedimientos" id="contendor-procedimientos2" style="display: none;">
+                            <!-- angulo -->
+                            <p class="tituloprocedimientos" id="titulo2" style="display: none;"></p>
+                            <div class="tabla" id="procedimientos2" style="display: none;">
+                                <div class="tabla-formula">
+                                    <p class="titulo2" id="titulooperacion2"> </p>
+                                    <p class="p-formulas" id="procedimiento22"></p>
+
+                                    <!-- conversiones al resultado -->
+
+                                    <div id="divconversionres2">
+                                        <p class="titulo3" id="conversionres2"></p>
+                                        <p class="p-formulas" id="conversionres22"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="contendor-procedimientos" id="contendor-procedimientos3" style="display: none;">
+                            <!-- velocidad inicial -->
+                            <p class="tituloprocedimientos" id="titulo3" style="display: none;"></p>
+                            <div class="tabla" id="procedimientos3" style="display: none;">
+                                <div class="tabla-formula">
+                                    <p class="titulo2" id="titulooperacion3"> </p>
+                                    <p class="p-formulas" id="procedimiento33"></p>
+
+                                    <!-- conversiones al resultado -->
+
+                                    <div id="divconversionres3">
+                                        <p class="titulo3" id="conversionres3"></p>
+                                        <p class="p-formulas" id="conversionres33"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="contendor-procedimientos" id="contendor-procedimientos4" style="display: none;">
+                            <!-- velocidad inicial en x-->
+                            <p class="tituloprocedimientos" id="titulo4" style="display: none;"></p>
+                            <div class="tabla" id="procedimientos4" style="display: none;">
+                                <div class="tabla-formula">
+                                    <p class="titulo2" id="titulooperacion4"> </p>
+                                    <p class="p-formulas" id="procedimiento44"></p>
+
+                                    <!-- conversiones al resultado -->
+
+                                    <div id="divconversionres4">
+                                        <p class="titulo3" id="conversionres4"></p>
+                                        <p class="p-formulas" id="conversionres44"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="contendor-procedimientos" id="contendor-procedimientos5" style="display: none;">
+                            <!-- velocidad inicial en y -->
+                            <p class="tituloprocedimientos" id="titulo5" style="display: none;"></p>
+                            <div class="tabla" id="procedimientos5" style="display: none;">
+                                <div class="tabla-formula">
+                                    <p class="titulo2" id="titulooperacion5"> </p>
+                                    <p class="p-formulas" id="procedimiento55"></p>
+
+                                    <!-- conversiones al resultado -->
+
+                                    <div id="divconversionres5">
+                                        <p class="titulo3" id="conversionres5"></p>
+                                        <p class="p-formulas" id="conversionres55"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="contendor-procedimientos" id="contendor-procedimientos6" style="display: none;">
+                            <!-- tiempo -->
+                            <p class="tituloprocedimientos" id="titulo6" style="display: none;"></p>
+                            <div class="tabla" id="procedimientos6" style="display: none;">
+                                <div class="tabla-formula">
+                                    <p class="titulo2" id="titulooperacion6"> </p>
+                                    <p class="p-formulas" id="procedimiento66"></p>
+
+                                    <!-- conversiones al resultado -->
+
+                                    <div id="divconversionres6">
+                                        <p class="titulo3" id="conversionres6"></p>
+                                        <p class="p-formulas" id="conversionres66"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="contendor-procedimientos" id="contendor-procedimientos7" style="display: none;">
+
+                            <!-- tiempo de vuelo-->
+                            <p class="tituloprocedimientos" id="titulo7" style="display: none;"></p>
+                            <div class="tabla" id="procedimientos7" style="display: none;">
+                                <div class="tabla-formula">
+                                    <p class="titulo2" id="titulooperacion7"> </p>
+                                    <p class="p-formulas" id="procedimiento77"></p>
+
+                                    <!-- conversiones al resultado -->
+
+                                    <div id="divconversionres7">
+                                        <p class="titulo3" id="conversionres7"></p>
+                                        <p class="p-formulas" id="conversionres77"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="contendor-procedimientos" id="contendor-procedimientos8" style="display: none;">
+                            <!-- altura  -->
+                            <p class="tituloprocedimientos" id="titulo8" style="display: none;"></p>
+                            <div class="tabla" id="procedimientos8" style="display: none;">
+                                <div class="tabla-formula">
+                                    <p class="titulo2" id="titulooperacion8"> </p>
+                                    <p class="p-formulas" id="procedimiento88"></p>
+
+                                    <!-- conversiones al resultado -->
+
+                                    <div id="divconversionres8">
+                                        <p class="titulo3" id="conversionres8"></p>
+                                        <p class="p-formulas" id="conversionres88"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="contendor-procedimientos" id="contendor-procedimientos9" style="display: none;">
+                            <!-- altura maxima -->
+                            <p class="tituloprocedimientos" id="titulo9" style="display: none;"></p>
+                            <div class="tabla" id="procedimientos9" style="display: none;">
+                                <div class="tabla-formula">
+                                    <p class="titulo2" id="titulooperacion9"> </p>
+                                    <p class="p-formulas" id="procedimiento99"></p>
+
+                                    <!-- conversiones al resultado -->
+
+                                    <div id="divconversionres9">
+                                        <p class="titulo3" id="conversionres9"></p>
+                                        <p class="p-formulas" id="conversionres99"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="contendor-procedimientos" id="contendor-procedimientos10" style="display: none;">
+                            <!-- desplazamiento horizontal -->
+                            <p class="tituloprocedimientos" id="titulo10" style="display: none;"></p>
+                            <div class="tabla" id="procedimientos10" style="display: none;">
+                                <div class="tabla-formula">
+                                    <p class="titulo2" id="titulooperacion10"> </p>
+                                    <p class="p-formulas" id="procedimiento10"></p>
+
+                                    <!-- conversiones al resultado -->
+
+                                    <div id="divconversionres10">
+                                        <p class="titulo3" id="conversionres10"></p>
+                                        <p class="p-formulas" id="conversionres1010"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="contendor-procedimientos" id="contendor-procedimientos11" style="display: none;">
+                            <!-- alcanze horizontal horizontal -->
+                            <p class="tituloprocedimientos" id="titulo11" style="display: none;"></p>
+                            <div class="tabla" id="procedimientos11" style="display: none;">
+                                <div class="tabla-formula">
+                                    <p class="titulo2" id="titulooperacion11"> </p>
+                                    <p class="p-formulas" id="procedimiento1111"></p>
+
+                                    <!-- conversiones al resultado -->
+
+                                    <div id="divconversionres11">
+                                        <p class="titulo3" id="conversionres11"></p>
+                                        <p class="p-formulas" id="conversionres1111"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- new section theory -->
+            <section class="theory">
+
+                <p class="theory__p">
+
+                    El <b>movimiento parabólico de caída libre o MPCL</b>, es un movimiento cuya trayectoria es
+                    una
+                    curva llamada parábola,
+                    en el cual el móvil se mueve únicamente bajo la influencia de la gravedad una vez que es
+                    liberado (en vacío, sin aire).
+                    <b>El movimiento parabólico de caída libre</b> es un movimiento compuesto formado por 2
+                    movimientos que se realizan
+                    al mismo tiempo y de forma independiente. En el eje horizontal «x» se desarrolla un
+                    movimiento
+                    rectilíneo uniforme o MRU;
+                    mientras que en el eje vertical «y» se desarrolla un movimiento vertical de caída libre o
+                    MVCL.
+                    <br>
+                    <br><b>Fórmulas de Movimiento parabolico</b>
+                    <br>
+
+                    <br><b>Velocidad final en y:</b>Velocidad inicial en y ± gravedad * tiempo
+                    <br><b>Altura:</b>Velocidad inicial en y * tiempo ± (Gravedad * Tiempo²) /2
+                    <br><b>Altura:</b>((Velocidad inicial en y + velocidad final en y ) /2 ) * tiempo
+                    <br><b>Velocidad Final en y²:</b>Velocidad inicial en y² ± 2 * gravedad * altura
+
+                    <br>
+                    <br><b>Fórmulas adicionales de Movimiento parabolico</b>
+                    <br>
+
+                    <br><b>Altura maxima:</b>(Velocidad inicial² * Sen²(ángulo)) / 2 * gravedad
+                    <br><b>Tiempo de vuelo:</b> 2 * Velocidad inicial * Sen(ángulo)
+                    <br><b>Desplazamiento horizontal</b>(Velocidad inicial² * Sen(2 * angulo)) / gravedad
+
+                    <br><br> <br><b>Usar (+) →</b> si el móvil baja.
+                    <br> <br><b>Usar (-) →</b> si el móvil sube.
+                </p>
+
+            </section>
+
+        </div>
+
+
+
+        <div class="button-up" id="button-up">
+            <i class="button-up__i  fas fa-chevron-up"></i>
+        </div>
+
+        <footer class="footer">
+            <a class="footer__a" href="">
+                @andER</a>
+        </footer>
+
+
+
+    </div>
+
+    <div id="modal_container" class="modal-container">
+
+        <div class="modal modal-close">
+            <a class="close">X</a>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="../assets/js/validateEmails.js"></script>
+    <script src="../assets/js/toggle_mpcl.js"></script>
+    <script src="../assets/js/modal.js"></script>
+    <script src="../assets/js/ejemplos/ejemplos_mpcl.js"></script>
+    <script src="../assets/js/mpcl.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../../main2.js"></script>
+
+
+</body>
+
+
+
+</html>

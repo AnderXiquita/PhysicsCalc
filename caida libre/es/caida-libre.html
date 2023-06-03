@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- META GENERAL -->
+    <meta charset="UTF-8">
+    <title>PhysicsCalc | Caida Libre</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description"
+        content="Calcula la velocidad y el tiempo de caída libre de un objeto utilizando nuestra calculadora de caída libre gratuita. Fácil de usar y precisa, nuestra herramienta es perfecta para estudiantes y profesionales interesados en la física" />
+    <meta name="keywords"
+        content="caida libre fisica, caida libre que es, caída libre ejemplos, caida libre, movimiento caida libre, formulas de caida libre, calculadora de caida libre, formulas de movimiento de caida libre" />
+
+
+    <!-- META ADICIONAL -->
+
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+    <meta property="og:type" content="website" />
+    <meta name="category" content="Education" />
+    <meta property="og:title" content="Calculadora de Caida Libre | Cinemática" />
+    <meta property="og:description"
+        content="Calculadora de caída libre, Solución de problemas y formulas despejadas de caida libre" />
+    <meta property="og:url" content="https://calculadoradefisica.online/es/caidalibre.html" />
+    <meta property="og:site_name" content="calculadoradefisica.online" />
+    <meta property="article:modified_time" content="2022-07-25T11:25:43+00:00" />
+    <meta name="keywords"
+        content="caida libre fisica, caida libre que es, caída libre ejemplos, caida libre, movimiento caida libre, formulas de caida libre, calculadora de caida libre, formulas de movimiento de caida libre" />
+
+
+
+    <!-- LINK IMPORT -->
+
+    <link rel="canonical" href="https://calculadoradefisica.online/es/caida-libre.html" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../assets/images/icon-navbar/logo.svg" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/calculadoras/style.css">
+    <link rel="stylesheet" href="../../css/nav-bar.css">
+
+    <!-- ADS -->
+    <script data-ad-client="ca-pub-2104042618438631" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- icon -->
+    <script src="https://kit.fontawesome.com/db0df6ecbc.js" crossorigin="anonymous"></script>
+
+
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "69x1cbufhg");
+    </script>
+
+
+</head>
+
+
+<body>
+
+    <nav>
+        <button class="menu1">
+            <div class="up"></div>
+            <div class="mid"></div>
+            <div class="down"></div>
+        </button>
+    
+        <a href="../../index.html"><span class="home"></span></a>
+    
+        <div class="mobile-menu inactive">
+            <ul>
+              <li class="titulo">
+                CINEMATICA
+              </li>
+              <li>
+                <a href="../../mru/es/mru.html">MRU</a>
+              </li>
+              <li>
+                <a href="../../mruv/es/mrua.html">MRUV</a>
+              </li>
+              <li>
+                <a href="../../caida libre/es/caida-libre.html">Caida Libre</a>
+              </li>
+              <li>
+                <a href="../../tiroParabolico/es/movimiento-parabolico.html">Tiro Parabolico</a>
+              </li>
+              <li>
+                <a href="../../html/enConstruccion.html">Tiro Vertical</a>
+              </li>
+              <li>
+                <a href="../../html/enConstruccion.html">MCU</a>
+              </li>
+              <li>
+                <a href="../../html/enConstruccion.html">MCUV</a>
+              </li>
+            </ul>
+        
+            <ul>
+              <li>
+                <a href="../../html/formularios.html">Formularios</a>
+              </li>
+              <li>
+                <a href="../../html/informacion.html">Informacion</a>
+              </li>
+            </ul>
+        
+            <ul>
+              <li>
+                <a href="../../html/enConstruccion.html" class="email">Lopezander210@gmail.com</a>
+              </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Menu superior -->
+
+    <div class="container">
+
+        <div class="contents">
+            <div class="title">
+                <h3 class="title__h3">Calculadora </h3>
+                <h1 class="title__h1">Caída Libre</h1>
+            </div>
+
+            <div class=contenedorcalculadora>
+
+                <div class=contenidoformulario class="form" id="contenedor">
+                    <p style="font-size: 20pt"><b>Ingresa los datos</b></p>
+                    <br>
+                    <div class="contenedorformularioparadatos">
+
+
+                        <form id="form" class="form">
+
+                            <!-- Input gravedad -->
+                            <label>Gravedad</label>
+                            <input type="number" id="aceleracion" step="any" placeholder="" value="9.8"
+                                onkeyup="captura()">
+                            <select id="g" class="menu">
+                                <option value="m/s2">m/s2</option>
+                            </select>
+
+
+                            <!-- Input Tiempo -->
+                            <label>Tiempo <span class="conversion" id="conversiont"></span></label>
+                            <input type="number" id="tiempo" step="any" placeholder="" onkeyup="captura()">
+                            <select id="unidadt" class="menu" onchange="captura()">
+                                <option value="seg" selected>segundos</option>
+                                <option value="min">minutos</option>
+                                <option value="hora">horas</option>
+                            </select>
+
+                            <!-- Input Altura -->
+                            <label>Altura <span class="conversion" id="conversiona"></span></label>
+                            <input type="number" id="altura" step="any" placeholder="" onkeyup="captura()">
+                            <select id="unidadh" class="menu" onchange="captura()">
+                                <option value="cm">centimetros</option>
+                                <option value="m" selected>metros</option>
+                                <option value="km">Kilometros</option>
+                            </select>
+
+
+
+                            <!-- Velocidad Inicial -->
+                            <label>Velocidad Inicial<span class="conversion" id="conversionvi"></span></label>
+                            <input type="number" id="vi" step="any" placeholder="" value="0" onkeyup="captura()">
+                            <select id="unidadvi" class="menu" onchange="captura()">
+                                <option value="m/s" selected>m/s</option>
+                                <option value="km/h">km/h</option>
+                            </select>
+
+                            <!-- Velocidad Final -->
+                            <label>Velocidad Final<span class="conversion" id="conversionvf"></span></label>
+                            <input type="number" id="vf" step="any" placeholder="" onkeyup="captura()">
+                            <select id="unidadvf" class="menu" onchange="captura()">
+                                <option value="m/s" selected>m/s</option>
+                                <option value="km/h">km/h</option>
+                            </select>
+
+                            </select>
+
+                            <!-- Boton para calcular -->
+                            <input type="button" id="calcular" value="LIMPIAR" onclick="limpiar(); captura()">
+
+                        </form>
+
+                    </div>
+                </div>
+
+                <!-- Resultado -->
+                <div class=contenedorresultado>
+
+                    <div class=advertencia>
+                    </div>
+
+                    <div class=contenedoresultado>
+                        <h3 class="textoresultado">Resultado</h3><br>
+                        <p class="textoresultado" id="resultado"></p>
+                        <p class="textoresultado" id="resultado2"></p>
+
+                    </div>
+
+
+
+                    <div id="fotoresultado" class="fotoresultado">
+
+
+                        <div class="contendor-procedimientos" id="contendor-procedimientos" style="display: none;">
+
+                            <p class="tituloprocedimientos" style="display: none;" id="titulotabla"> </p>
+
+                            <div class="tabla" id="tabla" style="display: none;">
+
+                                <div class="tabla-formula">
+
+                                    <!-- conversiones -->
+                                    <div id="divtiempo" style="display:none ;">
+                                        <p class="titulo2" id="conversiont1"> </p>
+                                        <p class="p-formulas" id="conversiont2"></p>
+                                    </div>
+
+                                    <div id="divaltura" style="display: none;">
+                                        <p class="titulo2" id="conversionh1"> </p>
+                                        <p class="p-formulas" id="conversionh2"></p>
+                                    </div>
+
+
+                                    <div id="divvi" style="display: none;">
+                                        <p class="titulo2" id="conversionvi1"></p>
+                                        <p class="p-formulas" id="conversionvi2"></p>
+                                    </div>
+
+                                    <div id="divvf" style="display:none;">
+                                        <p class="titulo2" id="conversionvf1"></p>
+                                        <p class="p-formulas" id="conversionvf2"></p>
+                                    </div>
+
+
+
+                                    <p class="titulo2" id="titulooperacion1"> </p>
+                                    <p class="p-formulas" id="frml1"></p>
+
+
+                                    <!-- conversiones al resultado -->
+                                    <div id="divconversionres1" style="display: none;">
+                                        <p class="titulo3" id="conversionres1"> </p>
+                                        <p class="p-formulas" id="conversionres11"></p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="contendor-procedimientos" id="contendor-procedimientos2" style="display: none;">
+
+                            <p class="tituloprocedimientos" style="display: none;" id="titulotabla2"></p>
+                            <div class="tabla" id="tabla2" style="display: none;">
+
+
+                                <div id="tabla-formula2" class="tabla-formula">
+
+                                    <p class="titulo2" id="titulooperacion2"> </p>
+
+                                    <p class="p-formulas" id="frml2"></p>
+
+
+                                    <!-- conversiones al resultado -->
+                                    <div id="divconversionres2" style="display: none;">
+                                        <p class="titulo3" id="conversionres2"></p>
+                                        <p class="p-formulas" id="conversionres22"></p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="contendor-procedimientos" id="contendor-procedimientos3" style="display: none;">
+
+                            <p class="tituloprocedimientos" style="display: none;" id="titulotabla3">ALTURA EN BASE AL
+                                TIEMPO</p>
+                            <div class="tabla" id="tabla3" style="display: none;">
+
+
+                                <div id="tabla-formula3" class="tabla-formula">
+
+                                    <p class="titulo2" id="titulooperacion3"> </p>
+
+                                    <p class="p__instante">Altura recorrida a los <input id="tiempo1" class="input-m"
+                                            type="number" value="0" onkeyup="captura()"> segundos = <a
+                                            id="resultado-h"></a>
+                                    </p>
+
+                                </div>
+                            </div>
+                            <br><br>
+                            <p class="tituloprocedimientos" style="display: none;" id="titulotabla4">VELOCIDAD EN BASE
+                                AL
+                                TIEMPO</p>
+
+                            <div class="tabla" id="tabla4" style="display: none;">
+
+
+                                <div id="tabla-formula4" class="tabla-formula">
+
+                                    <p class="titulo2" id="titulooperacion4"> </p>
+
+                                    <p class="p__instante" id="frml4">Velocidad del movil a los <input
+                                            onkeyup="captura()" id="tiempo2" class="input-m" type="number" value="0">
+                                        segundos = <a id="resultado-v"></a></p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- new section theory -->
+            <section class="theory">
+
+                <p class="theory__p">
+
+                    <br>La caída libre es un fenómeno físico que se produce cuando un cuerpo cae en el vacío, es
+                    decir, en un medio en el que no
+                    hay resistencia al movimiento. En una caída libre, el cuerpo experimenta una aceleración
+                    constante debido a la gravedad,
+                    que en la Tierra es de aproximadamente 9,8 metros por segundo al cuadrado. Esto significa
+                    que
+                    cada segundo que pasa, la
+                    velocidad de caída del cuerpo aumenta en 9,8 metros por segundo.
+                    En otras palabras, el cuerpo se acelera constantemente debido a la fuerza gravitatoria,
+                    y su velocidad y posición varían en función del tiempo. La caída libre
+                    es un concepto importante en la física, ya que se utiliza como modelo para analizar y
+                    comprender
+                    el movimiento de
+                    cuerpos en el espacio, y tiene aplicaciones en diversos campos como la ingeniería, la
+                    astronautica, la meteorología,
+                    entre otros.
+                    <br><br>
+                    <b>Fórmulas de Caída libre</b>
+                    <br>
+
+                    <br><b>Tiempo </b> = (Velocidad final - Velocidad inicial) / Gravedad
+                    <br><b>Altura </b> = (Gravedad * Tiempo²) /2
+                    <br><b>Altura </b> = Velocidad inicial * tiempo + (Gravedad * Tiempo²) /2
+                    <br><b>Velocidad Final </b> = Gravedad * Tiempo
+                    <br><b>Velocidad Final </b> = √( 2 * Gravedad * Altura)
+                    <br><b>Gravedad </b> = (Velocidad final - Velocidad inicial) / Tiempo
+            </section>
+
+        </div>
+
+
+
+        <div class="button-up" id="button-up">
+            <i class="button-up__i  fas fa-chevron-up"></i>
+        </div>
+
+        <footer class="footer">
+            <a class="footer__a" href="mailto:calculadoradefisica@pm.me">
+                @andER</a>
+        </footer>
+
+
+
+    </div>
+
+    <div id="modal_container" class="modal-container">
+
+        <div class="modal modal-close">
+            <a class="close">X</a>
+
+            <div class="modal-textos">
+                <h3>Reporte de fallos y sugerencias</h3>
+                <p>
+                    ¿Encontró un fallo o alguna sugerencia? pídelo y nosotros lo ajustamos, además ayudaras a
+                    mejorar este sitio web reportando lo que veas. (por ejemplo, errores de funcionamiento,
+                    errores de diseño, añadir aquello, etc.)
+
+                </p>
+
+                <form id="formEmail" action="https://formsubmit.co/Calculadoradefisica@pm.me" method="POST">
+                    <label for="Nombre">Nombre (opcional) </label>
+                    <input type="text" name="name" placeholder="">
+                    <label for="email">Email (opcional)</label>
+                    <input type="email" name="email" placeholder="">
+                    <label for="subject" style="display: none;">Asunto</label>
+                    <input type="text" style="display: none;" name="subject"
+                        value="Calculadora de movimiento de caida libre">
+                    <label for="comments">Reporte (Menciona cualquier sugerencia o falla presentada)</label>
+                    <textarea type="text" id="comments" name="comments" cols="15" rows="5"></textarea>
+                    <button id="enviar" type="button" onclick="enviarFormulario()">Enviar</button>
+                    <input type="hidden" name="_next" value="https://calculadoradefisica.online/es/caidalibre.html">
+                    <input type="hidden" name="_captcha" value="false">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="../assets/js/validateEmails.js"></script>
+    <script src="../assets/js/modal.js"></script>
+    <script src="../assets/js/ejemplos/ejemplos_cl.js"></script>
+    <script src="../assets/js/caidalibre.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../../main2.js"></script>
+
+
+</body>
+
+
+
+</html>
